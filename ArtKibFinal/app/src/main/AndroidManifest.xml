@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ArtKib">
-        <activity android:name=".mainpage"></activity>
+        <activity android:name=".discoverpage"></activity>
+        <activity android:name=".profilepage" />
+        <activity android:name=".mainpage" />
         <activity android:name=".registerpage" />
         <activity android:name=".secondpage" />
         <activity android:name=".MainActivity">

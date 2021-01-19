@@ -2,28 +2,22 @@ package com.example.artkib;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class mainpage extends AppCompatActivity {
+public class discoverpage extends AppCompatActivity {
 
-     @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mainpage);
-
+        setContentView(R.layout.activity_discoverpage);
         BottomNavigationView bottomNavigationView = findViewById(R.id.BottomNavigationView);
 
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.discover);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -44,5 +38,4 @@ public class mainpage extends AppCompatActivity {
             }
         });
     }
-
 }

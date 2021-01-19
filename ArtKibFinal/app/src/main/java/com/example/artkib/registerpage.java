@@ -28,7 +28,7 @@ public class registerpage extends AppCompatActivity {
         db=new DatabaseHelper(this);
 
         username1 = (EditText)findViewById(R.id.username1);
-        password1 = (EditText)findViewById(R.id.editTextTextEmailAddress);
+        password1 = (EditText)findViewById(R.id.EditTextPassword);
         confirmpass1 =(EditText)findViewById(R.id.confirmpass);
         register = (Button)findViewById(R.id.button3);
         login = (TextView)findViewById(R.id.login2);
