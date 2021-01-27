@@ -13,13 +13,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class registerpage extends AppCompatActivity {
     DatabaseHelper db;
-    EditText username1;
-    EditText password1;
-    EditText confirmpass1;
-    Button register;
-    TextView login;
+    TextInputLayout fname, UserName, Password, CPassword, Email;
+    Button reg, log;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,32 +26,35 @@ public class registerpage extends AppCompatActivity {
         setContentView(R.layout.activity_registerpage);
         db=new DatabaseHelper(this);
 
-        username1 = (EditText)findViewById(R.id.username1);
-        password1 = (EditText)findViewById(R.id.EditTextPassword);
-        confirmpass1 =(EditText)findViewById(R.id.confirmpass);
-        register = (Button)findViewById(R.id.button3);
-        login = (TextView)findViewById(R.id.login2);
-        login.setOnClickListener(new View.OnClickListener() {
+        fname = findViewById(R.id.name);
+        UserName = findViewById(R.id.username);
+        Password = findViewById(R.id.password);
+        Email = findViewById(R.id.email);
+        CPassword = findViewById(R.id.Cpassword);
+        reg = findViewById(R.id.reg_btn);
+        log = findViewById(R.id.log_btn);
+        log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent LoginIntent = new Intent(registerpage.this,MainActivity.class);
+                Intent LoginIntent = new Intent(registerpage.this,secondpage.class);
                 startActivity(LoginIntent);
             }
         });
-        register.setOnClickListener(new View.OnClickListener() {
+        reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username= username1.getText().toString();
-                String password= password1.getText().toString();
-                String confirmpass= confirmpass1.getText().toString();
+                String name= fname.getEditText().getText().toString();
+                String username= UserName.getEditText().getText().toString();
+                String email= Email.getEditText().getText().toString();
+                String password= Password.getEditText().getText().toString();
+                String confirmpass= CPassword.getEditText().getText().toString();
 
                 if (password.equals(confirmpass)){
-                    long val = db.addUser(username,password);
+                    long val = db.addUser(username,password,email,name);
                     if (val > 0){
                         Toast.makeText(registerpage.this,"You Have successfully registered",Toast.LENGTH_SHORT).show();
-                        Intent moveToLogin = new Intent(registerpage.this,MainActivity.class);
+                        Intent moveToLogin = new Intent(registerpage.this,secondpage.class);
                         startActivity(moveToLogin);
-
                     }
                     else{
                         Toast.makeText(registerpage.this,"Registration Error",Toast.LENGTH_SHORT).show();

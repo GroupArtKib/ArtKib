@@ -24,14 +24,14 @@ public class profilepage extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
-                    case R.id.home:
+                    case R.id.profile:
                         return true;
                     case R.id.discover:
                         startActivity(new Intent(getApplicationContext(), discoverpage.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.profile:
-                        startActivity(new Intent(getApplicationContext(), profilepage.class));
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(), mainpage.class));
                         overridePendingTransition(0,0);
                         return true;
                 }

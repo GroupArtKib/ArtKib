@@ -9,34 +9,37 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputLayout;
+
 public class secondpage extends AppCompatActivity {
     DatabaseHelper db;
-    EditText username1;
-    EditText password1;
-    Button login;
-    Button register;
+    TextInputLayout Password, UserName;
+    Button reg, log;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_secondpage);
-        db= new DatabaseHelper(this);
-        username1 = (EditText)findViewById(R.id.username);
-        password1 = (EditText)findViewById(R.id.password);
-        login = (Button)findViewById(R.id.button2);
-        register = (Button)findViewById(R.id.register);
-        register.setOnClickListener(new View.OnClickListener() {
+        db=new DatabaseHelper(this);
+
+        Password = findViewById(R.id.username);
+        UserName = findViewById(R.id.password);
+        log = findViewById(R.id.log_btn);
+        reg = findViewById(R.id.reg_btn);
+
+        reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent registerIntent = new Intent(secondpage.this, registerpage.class);
-                startActivity(registerIntent);
+                Intent LoginIntent = new Intent(secondpage.this,registerpage.class);
+                startActivity(LoginIntent);
             }
         });
-        login.setOnClickListener(new View.OnClickListener() {
+
+        log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = username1.getText().toString().trim();
-                String password = password1.getText().toString().trim();
+                String username = UserName.getEditText().getText().toString().trim();
+                String password = Password.getEditText().getText().toString().trim();
                 Boolean res = db.checkUser(username, password);
                 if(res == true)
                 {
@@ -49,5 +52,6 @@ public class secondpage extends AppCompatActivity {
                 }
             }
         });
+
     }
 }
