@@ -38,17 +38,21 @@ public class secondpage extends AppCompatActivity {
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = UserName.getEditText().getText().toString().trim();
-                String password = Password.getEditText().getText().toString().trim();
-                Boolean res = db.checkUser(username, password);
-                if(res == true)
-                {
-                    Intent HomePage = new Intent(secondpage.this,mainpage.class);
-                    startActivity(HomePage);
+                String username = UserName.getEditText().getText().toString();
+                String password = Password.getEditText().getText().toString();
+
+                if (username.equals("")||password.equals("")){
+                    Toast.makeText(secondpage.this,"Please Enter all the fields",Toast.LENGTH_SHORT).show();
                 }
-                else
-                {
-                    Toast.makeText(secondpage.this,"Login Error", Toast.LENGTH_SHORT).show();
+                else {
+                    Boolean res = db.checkUser(username, password);
+                    if (res == true) {
+
+                        Intent HomePage = new Intent(secondpage.this, mainpage.class);
+                        startActivity(HomePage);
+                    } else {
+                        Toast.makeText(secondpage.this, "Login Error", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

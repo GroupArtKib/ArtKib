@@ -26,7 +26,7 @@
         android:id="@+id/Slogan_Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SREGISTER TO DS"
+        android:text="REGISTER TO START YOUR JOURNEY"
         android:textSize="18sp"/>
 
     <LinearLayout
@@ -109,7 +109,9 @@
             android:layout_marginBottom="5dp"
             android:background="@color/dark"
             android:text="REGISTER"
-            android:textColor="#fff" />
+            android:textColor="#FBF9F9"
+            app:backgroundTint="#070707"
+            app:iconTint="#F8F1F1" />
 
         <Button
             android:id="@+id/log_btn"

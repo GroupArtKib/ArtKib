@@ -49,19 +49,25 @@ public class registerpage extends AppCompatActivity {
                 String password= Password.getEditText().getText().toString();
                 String confirmpass= CPassword.getEditText().getText().toString();
 
-                if (password.equals(confirmpass)){
-                    long val = db.addUser(username,password,email,name);
-                    if (val > 0){
-                        Toast.makeText(registerpage.this,"You Have successfully registered",Toast.LENGTH_SHORT).show();
-                        Intent moveToLogin = new Intent(registerpage.this,secondpage.class);
-                        startActivity(moveToLogin);
-                    }
-                    else{
-                        Toast.makeText(registerpage.this,"Registration Error",Toast.LENGTH_SHORT).show();
-                    }
+
+                if (name.equals("")||username.equals("")||email.equals("")|| password.equals("")||confirmpass.equals("")){
+                    Toast.makeText(registerpage.this,"Please Enter all the fields",Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(registerpage.this,"Password is not matching",Toast.LENGTH_SHORT).show();
+                    if ((password.equals(confirmpass))){
+                            Boolean insert = db.addUser(name,username,email,password);
+                            if(insert==true){
+                                Toast.makeText(registerpage.this,"You Have successfully registered",Toast.LENGTH_SHORT).show();
+                                Intent moveToLogin = new Intent(registerpage.this,secondpage.class);
+                                startActivity(moveToLogin);
+                            }
+                            else {
+                                Toast.makeText(registerpage.this,"Registration Error",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    else{
+                        Toast.makeText(registerpage.this,"Password is not matching",Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

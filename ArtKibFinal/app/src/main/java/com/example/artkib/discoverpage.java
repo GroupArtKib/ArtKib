@@ -1,9 +1,11 @@
 package com.example.artkib;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -61,36 +63,123 @@ public class discoverpage extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if(finalI==0) {
-                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Arts+and+Crafts+"));
-                        startActivity(intent);
+
+                        AlertDialog.Builder builder =new AlertDialog.Builder(discoverpage.this);
+                        builder.setMessage("PERMISSION TO REDIRECT TO YOUTUBE!!")
+                                .setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Arts+and+Crafts+"));
+                                        startActivity(intent);
+                                    }
+                                }) .setNegativeButton("CANCEL", null);
+                        AlertDialog alert = builder.create();
+                        alert.show();
                     }
                     else if(finalI==1) {
-                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Life+Hacks+"));
-                        startActivity(intent);
+                        AlertDialog.Builder builder =new AlertDialog.Builder(discoverpage.this);
+                        builder.setMessage("PERMISSION TO REDIRECT TO YOUTUBE!!")
+                                .setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Life+Hacks+"));
+                                        startActivity(intent);
+                                    }
+                                }) .setNegativeButton("CANCEL", null);
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
                     }
                     else if(finalI==2) {
-                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Beauty+and+Health+Hacks+"));
-                        startActivity(intent);
+                        AlertDialog.Builder builder =new AlertDialog.Builder(discoverpage.this);
+                        builder.setMessage("PERMISSION TO REDIRECT TO YOUTUBE!!")
+                                .setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Beauty+and+Health+Hacks+"));
+                                        startActivity(intent);
+                                    }
+                                }) .setNegativeButton("CANCEL", null);
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
                     }
                     else if(finalI==3) {
-                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Home+Decoration+Hacks+"));
-                        startActivity(intent);
+                        AlertDialog.Builder builder =new AlertDialog.Builder(discoverpage.this);
+                        builder.setMessage("PERMISSION TO REDIRECT TO YOUTUBE!!")
+                                .setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Home+Decoration+Hacks+"));
+                                        startActivity(intent);
+                                    }
+                                }) .setNegativeButton("CANCEL", null);
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
                     }
                     else if(finalI==4) {
-                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Food+Hacks+"));
-                        startActivity(intent);
+
+                        AlertDialog.Builder builder =new AlertDialog.Builder(discoverpage.this);
+                        builder.setMessage("PERMISSION TO REDIRECT TO YOUTUBE!!")
+                                .setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Food+Hacks+"));
+                                        startActivity(intent);
+                                    }
+                                }) .setNegativeButton("CANCEL", null);
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
                     }
                     else if(finalI==5) {
-                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Fashion+Hacks+"));
-                        startActivity(intent);
+
+                        AlertDialog.Builder builder =new AlertDialog.Builder(discoverpage.this);
+                        builder.setMessage("PERMISSION TO REDIRECT TO YOUTUBE!!")
+                                .setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Fashion+Hacks+"));
+                                        startActivity(intent);
+                                    }
+                                }) .setNegativeButton("CANCEL", null);
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
                     }
                     else if(finalI==6){
-                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Gardening+Hacks+"));
-                        startActivity(intent);
+
+                        AlertDialog.Builder builder =new AlertDialog.Builder(discoverpage.this);
+                        builder.setMessage("PERMISSION TO REDIRECT TO YOUTUBE!!")
+                                .setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=Gardening+Hacks+"));
+                                        startActivity(intent);
+                                    }
+                                }) .setNegativeButton("CANCEL", null);
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
                     }
                     else if(finalI==7) {
-                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=DIY+Hacks+"));
-                        startActivity(intent);
+
+                        AlertDialog.Builder builder =new AlertDialog.Builder(discoverpage.this);
+                        builder.setMessage("PERMISSION TO REDIRECT TO YOUTUBE!!")
+                                .setPositiveButton("OKAY", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent= new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query=DIY+Hacks+"));
+                                        startActivity(intent);
+                                    }
+                                }) .setNegativeButton("CANCEL", null);
+                        AlertDialog alert = builder.create();
+                        alert.show();
+
                     }
 
                 }
