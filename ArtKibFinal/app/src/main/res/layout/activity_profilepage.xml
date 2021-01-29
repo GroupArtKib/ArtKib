@@ -29,11 +29,11 @@
                 android:id="@+id/logo_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PROFILE"
+                android:text="ABOUT"
                 android:textColor="#000"
                 android:textSize="40sp"
                 android:textStyle="bold"
-                android:layout_marginTop="120dp"/>
+                android:layout_marginTop="130dp"/>
         </RelativeLayout>
 
         <RelativeLayout
@@ -41,9 +41,11 @@
             android:layout_height="200dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/profilename"/>
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/profilename"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
 
         </RelativeLayout>
 

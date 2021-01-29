@@ -10,7 +10,7 @@
         android:id="@+id/discover"
         android:icon="@drawable/search"/>
     <item
-        android:title="Profile"
+        android:title="About"
         android:id="@+id/profile"
         android:icon="@drawable/prof"/>
 </menu>

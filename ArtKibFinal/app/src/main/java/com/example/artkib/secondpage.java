@@ -1,7 +1,9 @@
 package com.example.artkib;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +22,6 @@ public class secondpage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_secondpage);
-        db=new DatabaseHelper(this);
 
         Password = findViewById(R.id.username);
         UserName = findViewById(R.id.password);
@@ -38,24 +39,35 @@ public class secondpage extends AppCompatActivity {
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = UserName.getEditText().getText().toString();
-                String password = Password.getEditText().getText().toString();
+                log_onClick(v);
 
-                if (username.equals("")||password.equals("")){
-                    Toast.makeText(secondpage.this,"Please Enter all the fields",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    Boolean res = db.checkUser(username, password);
-                    if (res == true) {
-
-                        Intent HomePage = new Intent(secondpage.this, mainpage.class);
-                        startActivity(HomePage);
-                    } else {
-                        Toast.makeText(secondpage.this, "Login Error", Toast.LENGTH_SHORT).show();
-                    }
-                }
             }
         });
 
+
+        }
+        public void log_onClick(View v) {
+            DatabaseHelper db = new DatabaseHelper(getApplicationContext());
+            Account account = new Account();
+
+            String username = UserName.getEditText().getText().toString();
+            String password = Password.getEditText().getText().toString();
+            if (account == null){
+                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                builder.setTitle("Error");
+                builder.setMessage("LOG IN ERROR");
+                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                builder.show();
+            }else {
+                Intent intent = new Intent(secondpage.this, mainpage.class);
+                startActivity(intent);
+            }
+
+        }
     }
-}
+
