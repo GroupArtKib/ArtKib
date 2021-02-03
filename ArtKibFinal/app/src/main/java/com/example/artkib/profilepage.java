@@ -33,7 +33,7 @@ public class profilepage extends AppCompatActivity {
 
         textView = findViewById(R.id.profilename);
 
-        textView.setText("This app is made by a group of 4 students");
+
 
         //StartLog Out
         out = findViewById(R.id.out_btn);
