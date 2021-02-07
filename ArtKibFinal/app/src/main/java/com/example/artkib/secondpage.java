@@ -48,8 +48,8 @@ public class secondpage extends AppCompatActivity {
         }
         public void log_onClick(View v) {
             DatabaseHelper db = new DatabaseHelper(getApplicationContext());
-            String username = UserName.getEditText().getText().toString();
-            String password = Password.getEditText().getText().toString();
+            String username = UserName.getEditText().getText().toString().trim();
+            String password = Password.getEditText().getText().toString().trim();
             Account account = db.login(username, password);
             if (account == null){
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());

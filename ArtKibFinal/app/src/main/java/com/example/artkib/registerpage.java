@@ -51,28 +51,12 @@ public class registerpage extends AppCompatActivity {
         try {
             DatabaseHelper db = new DatabaseHelper(getApplicationContext());
             Account account = new Account();
+
+            account.setFullname(fname.getEditText().getText().toString());
+            account.setUsername(UserName.getEditText().getText().toString());
             account.setEmail(Email.getEditText().getText().toString());
             account.setPassword(Password.getEditText().getText().toString());
-            account.setUsername(UserName.getEditText().getText().toString());
-            account.setFullname(fname.getEditText().getText().toString());
-            Account temp = db.checkUsername(UserName.getEditText().getText().toString());
-
-            if (account==null){
-                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                builder.setTitle("Error");
-                builder.setMessage("Fill in All Fields");
-                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-                builder.show();
-            }
-            else {
-                if (temp == null) {
-
-                    if (db.create(account)) {
+             if (db.create(account)) {
                         Intent intent = new Intent(registerpage.this, secondpage.class);
                         startActivity(intent);
                     } else {
@@ -86,20 +70,7 @@ public class registerpage extends AppCompatActivity {
                             }
                         });
                         builder.show();
-                    }
-                } else {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-                    builder.setTitle("Error");
-                    builder.setMessage("USERNAME EXIST");
-                    builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-                    builder.show();
-                }
-            }
+             }
         }
         catch (Exception e){
             AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
