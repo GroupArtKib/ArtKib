@@ -5,40 +5,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        >
+        android:layout_centerHorizontal="true">
+
         <LinearLayout
-            android:layout_width="250dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:orientation="vertical"
-            android:layout_gravity="center">
+            android:padding="15dp">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtName"
-            android:text="Username"
-            android:textSize="28sp"
-            android:textColor="#0A0A0B"
-            android:textStyle="bold"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginRight="33dp"
-            android:layout_marginEnd="33dp" />
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="33dp"
+                android:layout_marginRight="33dp"
+                android:text="Username"
+                android:textColor="#0A0A0B"
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtPrice"
-            android:layout_width="111dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtName"
-            android:layout_alignEnd="@+id/txtName"
-            android:layout_alignRight="@+id/txtName"
-            android:text="Caption"
-            android:textColor="#ce1309"
-            android:textSize="24sp" />
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtName"
+                android:layout_alignEnd="@+id/txtName"
+                android:layout_alignRight="@+id/txtName"
+                android:text="Caption"
+                android:textColor="#ce1309"
+                android:textSize="24sp" />
 
             <ImageView
                 android:id="@+id/imgFood"
@@ -47,8 +49,8 @@
                 android:layout_below="@+id/txtPrice"
                 android:layout_alignEnd="@+id/txtPrice"
                 android:layout_alignRight="@+id/txtPrice"
-                android:layout_marginTop="10dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="10dp"
                 app:srcCompat="@mipmap/ic_launcher" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

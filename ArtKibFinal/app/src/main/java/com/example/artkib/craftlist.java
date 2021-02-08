@@ -83,7 +83,7 @@ public class craftlist extends AppCompatActivity {
             String caption = cursor.getString(2);
             byte[] image = cursor.getBlob(3);
 
-            list.add(new Craft(name, caption, image, id));
+            list.add(new Craft(id, name, caption, image));
         }
         adapter.notifyDataSetChanged();
     }

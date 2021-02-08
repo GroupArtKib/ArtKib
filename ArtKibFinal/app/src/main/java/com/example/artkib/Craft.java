@@ -7,7 +7,7 @@ public class Craft {
     private String caption;
     private byte[] image;
 
-    public Craft(String name, String caption, byte[] image, int id) {
+    public Craft(int id, String name, String caption, byte[] image) {
         this.name = name;
         this.caption = caption;
         this.image = image;

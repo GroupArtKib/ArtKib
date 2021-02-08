@@ -14,9 +14,8 @@
                 android:layout_alignParentTop="true"
                 android:columnWidth="200dp"
                 android:gravity="center"
+                android:layout_centerHorizontal="true"
                 android:padding="30dp" >
-
-
             </GridView>
 
 
